@@ -1,3 +1,13 @@
+import nltk
+
+nltk.data.path.append('/home/ubuntu/nltk_data')  # Asegura que NLTK busque en la carpeta personalizada
+nltk.download('stopwords', download_dir='/home/ubuntu/nltk_data', quiet=True)
+nltk.download('punkt_tab', download_dir='/home/ubuntu/nltk_data', quiet=True)
+nltk.download('wordnet', download_dir='/home/ubuntu/nltk_data', quiet=True)
+
+from nltk.corpus import stopwords
+from nltk.stem import WordNetLemmatizer
+
 import warnings
 from tweet_classifier.model_loader import load_model, device
 from tweet_classifier.predict import predict_tweet
